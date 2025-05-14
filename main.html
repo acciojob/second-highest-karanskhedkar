@@ -24,21 +24,20 @@
 			if(allSame){
 				return "-Infinity";
 			}
-			let first=arr[0];
-			let second=arr[0];
-			for(let i=1;i<arrLen;i++){
-				if(arr[i]>first){
-					second=first;
-					first=arr[i];
-					}else if (arr[i] > second && arr[i] !== first) {
-				        second = arr[i];
-				    }
+			arr=arr.sort()
+			for(let i=arrLen-1;i>0;i--){
+				if(arr[i]!=arr[i-1]){
+						return arr[i-1];
+					}
+				// else if (arr[i] > second && arr[i] !== first) {
+				//         second = arr[i];
+				//     }
 			}
-			return second;
 		}
 
 		function Main() {
-			// var n = prompt("Enter the number of elements");
+			var n = prompt("Enter the number of elements");
+			
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
